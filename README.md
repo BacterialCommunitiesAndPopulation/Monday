@@ -1,6 +1,6 @@
 # Monday16thMay
 
-From 13:00 to 16:30
+From 09:00 to 16:30
 
 Time | syllabus
 -----| --------
