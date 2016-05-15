@@ -2,7 +2,7 @@ OTU-based analysis
 =====================================
 Jenni Hultman
 
-### Summary
+### SummaryIn Progress!
 
 In the previous session you quality filtered your data, made contigs, created OTUs and assigned taxonomy. Now we will continue with the OTUs to figure out what does the data mean. 
 
