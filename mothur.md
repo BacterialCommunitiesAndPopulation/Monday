@@ -70,15 +70,46 @@ wwtp.trim.contigs.good.summary
 
 It took 7 secs to summarize 862864 sequences.
 
+Before screen.seqs there were 1246070 reads, thus 383206 (30%) were of bad quality (or no pairs). 
+
     mothur > unique.seqs(fasta=wwtp.trim.contigs.good.fasta)
 
 Output File Names: 
 wwtp.trim.contigs.good.names
 wwtp.trim.contigs.good.unique.fasta
 
-    mothur > count.seqs(name=wwtp.trim.contigs.good.names, group=wwtp.contigs.groups)
+    mothur > count.seqs(name=wwtp.trim.contigs.good.names, group=wwtp.contigs.good.groups)
+
+Using 8 processors.
+It took 7 secs to create a table for 862864 sequences.
 
 
+Total number of sequences: 862864
 
+Output File Names: 
+wwtp.trim.contigs.good.count_table
 
-  
+    mothur > summary.seqs(fasta=wwtp.trim.contigs.good.unique.fasta, count=wwtp.trim.contigs.good.count_table)
+
+Using 8 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	400	400	0	3	1
+2.5%-tile:	1	431	431	0	4	21572
+25%-tile:	1	460	460	0	5	215717
+Median: 	1	466	466	0	5	431433
+75%-tile:	1	482	482	0	5	647149
+97.5%-tile:	1	506	506	0	6	841293
+Maximum:	1	506	506	0	48	862864
+Mean:	1	467.12	467.12	0	4.98364
+# of unique seqs:	404102
+total # of seqs:	862864
+
+Output File Names: 
+wwtp.trim.contigs.good.unique.summary
+
+Around 50% of the reads are non-unique.
+
+    mothur > align.seqs(fasta=wwtp.trim.contigs.good.unique.fasta, reference=/proj/hultman/KURSSI/silva.nr_v123.align)
+
+ 
