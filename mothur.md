@@ -180,5 +180,11 @@ wwtp.trim.contigs.good.unique.good.filter.unique.precluster.ER716.map
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.ER745.map
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.ER746.map
 
+	chimera.uchime(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
+Output File Names: 
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.chimeras
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos
+
 
 
