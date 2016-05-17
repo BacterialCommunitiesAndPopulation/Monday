@@ -160,6 +160,7 @@ wwtp.trim.contigs.good.unique.good.filter.fasta
 
 	mothur > unique.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.fasta, count=wwtp.trim.contigs.good.good.count_table)
 	mothur > pre.cluster(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.fasta, count=wwtp.trim.contigs.good.unique.good.filter.count_table, diffs=2)
+	
 Total number of sequences before pre.cluster was 5807.
 pre.cluster removed 395 sequences.
 
@@ -180,11 +181,65 @@ wwtp.trim.contigs.good.unique.good.filter.unique.precluster.ER716.map
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.ER745.map
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.ER746.map
 
+Then let's search for chimeric sequnces with uchime (see Kaisa's notes for details).
+
 	chimera.uchime(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.count_table, dereplicate=t)
+	
 Output File Names: 
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.chimeras
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos
+Then we'll need to remove the chimeric sequences from the current fasta file:
 
+	mothur > remove.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.fasta, accnos=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.accnos)
+	
+[WARNING]: This command can take a namefile and you did not provide one. The current namefile is wwtp.trim.contigs.good.names which seems to match wwtp.trim.contigs.good.unique.good.filter.unique.precluster.fasta.
+Removed 4795 sequences from your fasta file.
+
+Output File Names: 
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta
+
+Let's ummarize what we have:
+
+	mothur > summary.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table)
+
+Using 8 processors.
+
+		Start	End	NBases	Ambigs	Polymer	NumSeqs
+Minimum:	1	1087	437	0	3	1
+2.5%-tile:	1	1089	452	0	4	437
+25%-tile:	1	1089	456	0	4	4365
+Median: 	1	1089	479	0	5	8730
+75%-tile:	1	1089	485	0	5	13095
+97.5%-tile:	1	1089	497	0	6	17023
+Maximum:	1	1089	505	0	8	17459
+Mean:	1	1089	472.851	0	4.86414
+# of unique seqs:	15161
+total # of seqs:	17459
+
+Output File Names: 
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary
+Time to classify the reads
+
+	mothur > classify.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=/proj/hultman/KURSSI/silva.bacteria/silva.bacteria.fasta, taxonomy=/proj/hultman/KURSSI/silva.bacteria/silva.bacteria.silva.tax, cutoff=80)
+	
+Output File Names: 
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.silva.wang.taxonomy
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.silva.wang.tax.summary
+
+Then we will remove the possible contaminant taxa. As the primers are for bacterial sequences, we will remove unknown, Eukaryota and Archaea.
+
+	mothur > remove.lineage(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, taxonomy=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.silva.wang.taxonomy, taxon=unknown-Eukaryota-Archaea)
+
+	mothur > dist.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.fasta, cutoff=0.20)
+	
+	Output File Names: 
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist
+
+It took 255 seconds to calculate the distances for 15161 sequences.
+
+	mothur > cluster(column=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.dist, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.pick.count_table)
+Output File Names: 
+wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.pick.an.unique_list.list
 
 
