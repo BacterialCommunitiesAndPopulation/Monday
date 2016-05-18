@@ -31,7 +31,7 @@ Median: 	1	467	467	0	5	623036
 97.5%-tile:	1	506	506	11	6	1214919
 Maximum:	1	602	602	260	301	1246070
 Mean:	1	467.727	467.727	1.23448	5.05348
-# of Seqs:	1246070
+\# of Seqs:	1246070
 
 Output File Names: 
 wwtp.trim.contigs.summary
@@ -63,7 +63,7 @@ Median: 	1	466	466	0	5	431433
 97.5%-tile:	1	506	506	0	6	841293
 Maximum:	1	506	506	0	48	862864
 Mean:	1	467.12	467.12	0	4.98364
-# of Seqs:	862864
+\# of Seqs:	862864
 
 Output File Names: 
 wwtp.trim.contigs.good.summary
@@ -102,8 +102,8 @@ Median: 	1	466	466	0	5	431433
 97.5%-tile:	1	506	506	0	6	841293
 Maximum:	1	506	506	0	48	862864
 Mean:	1	467.12	467.12	0	4.98364
-# of unique seqs:	404102
-total # of seqs:	862864
+\# of unique seqs:	404102
+total \# of seqs:	862864
 
 Output File Names: 
 wwtp.trim.contigs.good.unique.summary
@@ -124,8 +124,8 @@ Median: 	1046	13125	465	0	5	431433
 97.5%-tile:	1046	13878	505	0	6	841293
 Maximum:	43116	43116	505	0	48	862864
 Mean:	1119.36	13054.7	464.559	0	4.96943
-# of unique seqs:	404102
-total # of seqs:	862864
+\\# of unique seqs:	404102
+total \# of seqs:	862864
 
 Output File Names: 
 wwtp.trim.contigs.good.unique.summary
@@ -214,8 +214,8 @@ Median: 	1	1089	479	0	5	8730
 97.5%-tile:	1	1089	497	0	6	17023
 Maximum:	1	1089	505	0	8	17459
 Mean:	1	1089	472.851	0	4.86414
-# of unique seqs:	15161
-total # of seqs:	17459
+\# of unique seqs:	15161
+total \# of seqs:	17459
 
 Output File Names: 
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary
