@@ -221,7 +221,7 @@ Output File Names:
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.summary
 Time to classify the reads
 
-	mothur > classify.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=/proj/hultman/KURSSI/silva.bacteria/silva.bacteria.fasta, taxonomy=/proj/hultman/KURSSI/silva.bacteria/silva.bacteria.silva.tax, cutoff=80)
+	mothur > classify.seqs(fasta=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.fasta, count=wwtp.trim.contigs.good.unique.good.filter.unique.precluster.denovo.uchime.pick.count_table, reference=/proj/hultman/KURSSI/silva.nr_v123.align, taxonomy=/proj/hultman/KURSSI/silva.nr_v123.tax, cutoff=80)
 	
 Output File Names: 
 wwtp.trim.contigs.good.unique.good.filter.unique.precluster.pick.silva.wang.taxonomy
